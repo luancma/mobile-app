@@ -1,35 +1,90 @@
 import React from "react";
-import { ScrollView, Text, StyleSheet, SafeAreaView } from "react-native";
+import { Text, View, ImageBackground, Button, StatusBar } from "react-native";
 
-import Constants from "expo-constants";
+import { AntDesign } from "@expo/vector-icons";
+import {
+  CardForm,
+  Container,
+  ImageView,
+  TextFormArea,
+  CardArea
+} from "./styles";
+import { TitleArea, MainTitle, SubTitle } from "../../global/styles";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
-export default function FormList() {
+export default function FormList({ navigation }) {
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
-        <Text style={styles.text}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </Text>
-      </ScrollView>
-    </SafeAreaView>
+    <Container>
+      <StatusBar backgroundColor="blue" barStyle="light-content" />
+      <TitleArea>
+        <MainTitle>Formulários</MainTitle>
+        <SubTitle>20 de julho</SubTitle>
+      </TitleArea>
+      <CardArea>
+        <CardForm>
+          <ImageView
+            source={{
+              uri: ""
+            }}
+          >
+            <TouchableOpacity onPress={() => navigation.navigate("Second")}>
+              <TextFormArea>
+                <Text
+                  style={{ color: "white", marginLeft: 20, marginBottom: 5 }}
+                >
+                  Preencha agora o Censo 2020 Demográfico 2020
+                </Text>
+                <AntDesign
+                  name="arrowright"
+                  size={16}
+                  color="#fff"
+                  style={{ marginBottom: 5 }}
+                />
+              </TextFormArea>
+            </TouchableOpacity>
+          </ImageView>
+        </CardForm>
+
+        <CardForm>
+          <ImageView
+            source={{
+              uri: ""
+            }}
+          >
+            <TextFormArea>
+              <Text style={{ color: "white", marginLeft: 20, marginBottom: 5 }}>
+                Preencha agora o Censo 2020 Demográfico 2020
+              </Text>
+              <AntDesign
+                name="arrowright"
+                size={16}
+                color="#fff"
+                style={{ marginBottom: 5 }}
+              />
+            </TextFormArea>
+          </ImageView>
+        </CardForm>
+
+        <CardForm>
+          <ImageView
+            source={{
+              uri: ""
+            }}
+          >
+            <TextFormArea>
+              <Text style={{ color: "white", marginLeft: 20, marginBottom: 5 }}>
+                Preencha agora o Censo 2020 Demográfico 2020
+              </Text>
+              <AntDesign
+                name="arrowright"
+                size={16}
+                color="#fff"
+                style={{ marginBottom: 5 }}
+              />
+            </TextFormArea>
+          </ImageView>
+        </CardForm>
+      </CardArea>
+    </Container>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    marginTop: Constants.statusBarHeight
-  },
-  scrollView: {
-    backgroundColor: "pink",
-    marginHorizontal: 20
-  },
-  text: {
-    fontSize: 42
-  }
-});
